@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+        title Booklist
+        link(rel='stylesheet'
+href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
+    body.bg-light
+        header.jumbotron-fluid.bg-secondary.p-3
+            h1.text-center.text-dark.display-4.font-weight-bold #{nadpis}
+        main.container
+            table.mt-3(class="table table-striped")
+                thead
+                    tr.bg-dark.text-light
+                        th Name of the book
+                        th Progress
+                        th Commentary
+                        th Add date
+                tbody
+                    each name in books
+                        tr
+                            td #{name.name}
+                            td #{name.progress}
+                            td #{name.comm}
+                            td #{name.date}
+        footer.container.rounded.bg-dark.p-2
+            .container.text-white
+                p.float-right
+                    a.btn.btn-secondary(href="/") Back to form
+                p &copy; 2023 - IT2 - NodeJS
+        script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+        script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')
